@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Create an Worker{% endblock %}
+
+{% block content %}
+{% load bootstrap4 %}
+{% bootstrap_messages %}
+<div class=" jumbotron col-md-8 col-md-offset-2" >
+	<h3 class="text-center"> Worker Entry Form</h3>
+    <hr>
+    {% bootstrap_form_errors wform %}
+	<form action="." method="POST">
+    {% csrf_token %}
+    {% bootstrap_form wform %}
+    <div class="text-center">
+      <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

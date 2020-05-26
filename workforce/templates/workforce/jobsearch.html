@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Job search{% endblock %}
+{% block content %}
+	<h4>Worker Info </h4>
+	<hr>
+        <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{worker.Firstname}} {{worker.Lastname}}</h4>
+              <p class="card-text">{{worker.Phone_no}} <br> {{worker.Address}} <br> Aadhaar No:- {{worker.Aadhaar}} &emsp; PAN No:- {{worker.PAN}}
+            <br> Industry:- {{worker.Industry}} &emsp; Skill:- {{worker.Skill}}</p> 
+            </div>
+        </div>
+    <h4>Company Info </h4>
+    <hr>
+        <div class="card">
+            <div class="card-body">
+                {% if success %}
+                <h4 class="card-title">{{company.Companyname}}</h4>
+                <p class="card-text">Contact Person:- {{company.Name}} <br> {{company.Phone_no}} <br> {{company.Address}}
+                    <br> Industry:- {{company.Industry_type}} &emsp; Skill:- {{company.Skill_required}}</p> 
+                {% else %}
+                <p>No job opportunity found</p>
+                {% endif %}
+                </div>
+            </div>
+
+{% endblock %}

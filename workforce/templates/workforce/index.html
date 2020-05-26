@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}All the workers{% endblock %}
+{% block content %}
+	<h3>Your current list of Workers </h3>
+	<hr>
+	<br>
+		{% for worker in object_list %}
+        <div class="card">
+            <div style="padding-top: 5px;">
+              <h5>{{worker.Industry}}</h5>
+            </div>
+            <hr>
+            <div class="card-body">
+              <h4 class="card-title">{{worker.Firstname}} {{worker.Lastname}}</h4>
+              <p class="card-text">{{worker.Phone_no}} <br> {{worker.Address}} <br> Aadhaar No:- {{worker.Aadhaar}} &emsp; PAN No:- {{worker.PAN}}</p>  
+              <a href="{% url 'workforce:jobsearch' worker.id %}" class="btn btn-primary">Hunt for Job</a>
+            </div>
+            <hr>
+            <div style="padding-bottom: 5px;">
+              Skills:- {{worker.Skill}}
+            </div>
+          </div>
+          <hr>
+		{% empty %}	
+		{% endfor %}
+
+{% endblock %}
