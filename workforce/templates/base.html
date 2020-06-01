@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<title>Revival-Workforce</title>
@@ -14,10 +15,12 @@
   </style>
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    {% block additional_styles %}
+    {% endblock %}
 </head>
-<body>
+<body style="background-color: rgb(171, 208, 240);">
           <nav class="navbar navbar-inverse navbar-fixed-top">
               <div class="container-fluid">
                   <div class="navbar-header">
@@ -58,7 +61,7 @@
                   </div>
               </div>
           </nav>
-          <div class="container" style="padding-top: 80px;">
+          <div class="container po" style="padding-top: 80px;">
           {% block content %}
           {% endblock %}
           </div>

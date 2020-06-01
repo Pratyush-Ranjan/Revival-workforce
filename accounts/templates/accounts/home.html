@@ -1,6 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
+{% block additional_styles %}
+<style>
+   body {
+    background-image: url("{% static 'back.jpg' %}");
+    height: 100%;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+   }
+</style>
+{% endblock %}
 {% block title %}start{% endblock %}
-
 {% block content %}
-    <p>welcome to the DMES project app.</p>
+    <p><b>Welcome to the DMES project app made by Farhan Tahir(2016IPG052), Mohit Nama(2016IPG054), Prakhar Bansal(2016IPG070), Pratyush Ranjan(2016IPG074).</b></p>
 {% endblock %}
